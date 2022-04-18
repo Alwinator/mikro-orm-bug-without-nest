@@ -1,0 +1,22 @@
+{
+  "name": "mikro-orm-bug",
+  "version": "1.0.0",
+  "dependencies": {
+    "@mikro-orm/cli": "^5.1.2-dev.38",
+    "@mikro-orm/core": "^5.1.2-dev.38",
+    "@mikro-orm/migrations": "^5.1.2-dev.38",
+    "@mikro-orm/reflection": "^5.1.2-dev.38",
+    "@mikro-orm/sqlite  ": "^5.1.2-dev.38",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.25"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./mikro-orm.config.ts"
+    ]
+  }
+}
