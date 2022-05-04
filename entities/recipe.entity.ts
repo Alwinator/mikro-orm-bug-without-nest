@@ -1,5 +1,5 @@
 import {Cascade, Collection, Entity, OneToMany, PrimaryKey, Property} from '@mikro-orm/core'
-import {RecipeIngredient} from "./recipe-ingredient.entity";
+import {RecipeStep} from "./recipe-step.entity";
 
 
 @Entity()
@@ -10,8 +10,6 @@ export class Recipe{
   @Property()
   name: string
 
-  @OneToMany(() => RecipeIngredient,
-      recipeIngredient => recipeIngredient.recipe,
-      {cascade: [Cascade.ALL], eager: true, orphanRemoval: true})
-  ingredients: Collection<RecipeIngredient> = new Collection<RecipeIngredient>(this)
+  @OneToMany(() => RecipeStep, step => step.recipe, {cascade: [Cascade.ALL], eager: true, orphanRemoval: true})
+  steps: Collection<RecipeStep> = new Collection<RecipeStep>(this)
 }

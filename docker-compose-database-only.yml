@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  database:
+    image: postgres:14.2
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=mikro-orm-bug
+      - POSTGRES_PASSWORD=C47n47z8z!
+      - POSTGRES_DB=mikro-orm-bug
+    restart: always
+    volumes:
+      - ./export.pgsql:/docker-entrypoint-initdb.d/dummy_dump.sql
